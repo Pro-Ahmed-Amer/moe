@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    // connect with bootstrap and jquery
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    // connect with bootstrap
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    // make script to fetch data from api using javascript
+    <script>
+        // fetch data from api
+        fetch('https://api.github.com/users/mohamed-abdel-wahab')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // get data from api
+                // make variable to get id from api
+                let id = data.id;
+                const name = data.name;
+                const avatar = data.avatar_url;
+                const bio = data.bio;
+                const company = data.company;
+                const blog = data.blog;
+                const location = data.location;
+                const email = data.email;
+                const hireable = data.hireable;
+                const publicRepos = data.public_repos;
+                const publicGists = data.public_gists;
+                const followers = data.followers;
+                const following = data.following;
+                const createdAt = data.created_at;
+                const updatedAt = data.updated_at;
+
+                // get data from api and display it in html
+                document.getElementById('id').innerHTML = id;
+                document.getElementById('name').innerHTML = name;
+                document.getElementById('avatar').src = avatar;
+                document.getElementById('bio').innerHTML = bio;
+                document.getElementById('company').innerHTML = company;
+                document.getElementById('blog').innerHTML = blog;
+                document.getElementById('location').innerHTML = location;
+                document.getElementById('email').innerHTML = email;
+                document.getElementById('hireable').innerHTML = hireable;
+                document.getElementById('publicRepos').innerHTML = publicRepos;
+                document.getElementById('publicGists').innerHTML = publicGists;
+                document.getElementById('followers').innerHTML = followers;
+                document.getElementById('following').innerHTML = following;
+                document.getElementById('createdAt').innerHTML = createdAt;
+                document.getElementById('updatedAt').innerHTML = updatedAt;
+            });
+    </script>
+
+    // display the data from api in html
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img id="avatar" class="img-fluid" src="https://avatars0.githubusercontent.com/u/291827?v=4" alt="">
+            </div>
+            <div class="col-md-8">
+                <h2 id="id"></h2>
+                <h2 id="name"></h2>
+                <p id="bio"></p>
+                <p>Company: <span id="company"></span></p>
+                <p>Blog: <span id="blog"></span></p>
+                <p>Location: <span id="location"></span></p>
+                <p>Email: <span id="email"></span></p>
+                <p>Hireable: <span id="hireable"></span></p>
+                <p>Public Repos: <span id="publicRepos"></span></p>
+                <p>Public Gists: <span id="publicGists"></span></p>
+                <p>Followers: <span id="followers"></span></p>
+                <p>Following: <span id="following"></span></p>
+                <p>Created At: <span id="createdAt"></span></p>
+                <p>Updated At: <span id="updatedAt"></span></p>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
